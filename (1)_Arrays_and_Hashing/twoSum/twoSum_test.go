@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func TestTableValidAnagram(t *testing.T) {
+func TestTableTwoSum(t *testing.T) {
 	var tests = []struct {
 		input1   []int
 		input2   int
