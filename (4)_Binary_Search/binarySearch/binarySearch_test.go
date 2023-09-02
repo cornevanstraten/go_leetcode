@@ -14,7 +14,10 @@ func TestTableBinarySearch(t *testing.T) {
 
 	for i, test := range tests {
 		if output := BinarySearch(test.input1, test.input2); output != test.expected {
-			t.Errorf("Test %d failed", i)
+			t.Errorf("Test %d failed for Binary Search (regular)", i)
+		}
+		if output := BinarySearchRecursive(test.input1, test.input2); output != test.expected {
+			t.Errorf("Test %d failed for Binary Search (Recursive)", i)
 		}
 	}
 }

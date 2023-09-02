@@ -48,6 +48,25 @@ func BinarySearch(nums []int, target int) int {
 	return -1
 }
 
+func BinarySearchRecursive(nums []int, target int) int {
+	var recursiveSearch func(nums []int, l int, r int) int
+
+	recursiveSearch = func(nums []int, l int, r int) int {
+		if l <= r {
+			m := (l + r) / 2
+			if nums[m] > target {
+				return recursiveSearch(nums, l, m-1)
+			} else if nums[m] < target {
+				return recursiveSearch(nums, m+1, r)
+			} else {
+				return m
+			}
+		}
+		return -1
+	}
+	return recursiveSearch(nums, 0, len(nums)-1)
+}
+
 func main() {
 	fmt.Println(BinarySearch([]int{-1, 0, 3, 5, 9, 12}, 9))
 	fmt.Println("Hello, binarySearch!")
