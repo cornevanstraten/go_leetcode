@@ -60,7 +60,7 @@ func ReverseListRecursive(head *ListNode) *ListNode {
 		return curr
 	}
 
-	newHead := ReverseListRecursive(curr.Next) //find tail, turn to new head
+	newHead := ReverseListRecursive(curr.Next) //find tail, turn into new head
 	curr.Next.Next = curr                      //reverse the link
 	curr.Next = nil                            //create new tail
 	return newHead
