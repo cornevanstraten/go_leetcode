@@ -43,8 +43,8 @@ type ListNode struct {
 }
 
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
-	start := &ListNode{Val: -1, Next: nil} //start with empty node
-	tail := start                          //set tail to empty to start growing the new list
+	start := new(ListNode) //start with empty node
+	tail := start          //set tail to empty to start growing the new list
 
 	for list1 != nil && list2 != nil { //while there are (still) two lists to deal with
 		if list1.Val < list2.Val { //point the tail to the lowest of the values
