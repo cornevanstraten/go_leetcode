@@ -66,52 +66,52 @@ func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	return start.Next //head is where we started
 }
 
-// func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
-// 	var head *ListNode
-// 	var tail *ListNode
+func mergeTwoListOriginal(list1 *ListNode, list2 *ListNode) *ListNode {
+	var head *ListNode
+	var tail *ListNode
 
-// 	//if list1 or list 2 is null, return the other one
-// 	if list1 == nil || list2 == nil {
-// 		if list1 == nil {
-// 			return list2
-// 		}
-// 		return list1
-// 	}
+	//if list1 or list 2 is null, return the other one
+	if list1 == nil || list2 == nil {
+		if list1 == nil {
+			return list2
+		}
+		return list1
+	}
 
-// 	//if list1.val < list2.val; set head to list1 and ++ list1; otherwise for list2
-// 	if list1.Val < list2.Val {
-// 		head = list1
-// 		list1 = list1.Next
-// 	} else {
-// 		head = list2
-// 		list2 = list2.Next
-// 	}
+	//if list1.val < list2.val; set head to list1 and ++ list1; otherwise for list2
+	if list1.Val < list2.Val {
+		head = list1
+		list1 = list1.Next
+	} else {
+		head = list2
+		list2 = list2.Next
+	}
 
-// 	//set tail to head and start growing the tail
-// 	tail = head
+	//set tail to head and start growing the tail
+	tail = head
 
-// 	//while there is still elements in each list
-// 	for list1 != nil && list2 != nil {
-// 		//evaluate the elements, set the smallest to next, and update tail
-// 		if list1.Val < list2.Val {
-// 			tail.Next = list1
-// 			list1 = list1.Next
-// 		} else {
-// 			tail.Next = list2
-// 			list2 = list2.Next
-// 		}
-// 		tail = tail.Next
-// 	}
-// 	//finally set the tail to the node from the list that is not empty
-// 	if list1 != nil {
-// 		tail.Next = list1
-// 	} else {
-// 		tail.Next = list2
-// 	}
+	//while there is still elements in each list
+	for list1 != nil && list2 != nil {
+		//evaluate the elements, set the smallest to next, and update tail
+		if list1.Val < list2.Val {
+			tail.Next = list1
+			list1 = list1.Next
+		} else {
+			tail.Next = list2
+			list2 = list2.Next
+		}
+		tail = tail.Next
+	}
+	//finally set the tail to the node from the list that is not empty
+	if list1 != nil {
+		tail.Next = list1
+	} else {
+		tail.Next = list2
+	}
 
-// 	return head
+	return head
 
-// }
+}
 
 func main() {
 	fmt.Println("Hello, Merge2Lists")
