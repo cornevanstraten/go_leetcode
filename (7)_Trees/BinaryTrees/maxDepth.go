@@ -27,8 +27,6 @@ The number of nodes in the tree is in the range [0, 104].
 
 package main
 
-import "fmt"
-
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -48,8 +46,4 @@ func maxDepth(root *TreeNode) int {
 		return maxDepthLeft
 	}
 	return maxDepthRight
-}
-
-func main() {
-	fmt.Println("Hello, maxDepth!")
 }
